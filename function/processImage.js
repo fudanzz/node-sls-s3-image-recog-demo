@@ -17,17 +17,17 @@ module.exports.handler = async (event) => {
   const labels = await ImageAnalyser.getImageLabels(s3Config);
 
   console.log(`receive labels: ${labels}`);
-
-  const destparams = {
-      Bucket: bucketname,
-      Key: imageName,
-      Body: JSON.stringify(labels),
-      ContentType: "application/json"
-  };
-
-
-  console.log('send result to s3 bucket');
-  const putResult = await s3.putObject(destparams).promise(); 
+  
+  console.log(JSON.stringify(labels));
+  
+ const result= await s3.putObject({
+   Bucket:'image-process-result',
+   Key:'result.json',
+   Body:JSON.stringify(labels),
+   ContentType:'application/json'
+    
+  }).promise();
+  
 
 
 };
