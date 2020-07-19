@@ -1,0 +1,7 @@
+{
+  "name": "sls-node-s3-image-recognition-demo",
+  "version": "1.0.0",
+  "description": "Example demonstrates how to setup a simple HTTP GET endpoint",
+  "author": "",
+  "license": "MIT"
+}
