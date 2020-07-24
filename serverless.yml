@@ -22,12 +22,6 @@ provider:
       Resource: "*" 
 
 functions:
-  helloWorld:
-    handler: function/helloWorld.handler
-    events:
-      - http:
-          path: hello
-          method: get
   processImage:
     handler: function/processImage.handler
     events:
